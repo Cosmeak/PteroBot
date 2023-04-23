@@ -4,7 +4,7 @@ This Discord Bot is a mission gived by `MrJuju0319#5801` to connect his Pterodac
 We decide to use only the Client part of the API to avoid potential big mistake like delete a server.
 
 ## Bot Features
-It can actually: 
+It can currently: 
 - [x] `/servers` - Show informations about servers
 - [x] `/server {identifier}` - Show informations about a specific server
 - [x] `/power {identifier} {state}` - Provide a way to change server state (start, stop, kill, restart)
@@ -13,7 +13,7 @@ It can actually:
 - [x] `/backups {identifier}` - Show all backups for a server
 - [x] `/create-backup {identifier}` - Create a new backup for a server
 
-<small style="color:slategray;">👑: only for admins</small>
+<small>👑: only for admins</small>
 
 ## How to Install and Run the Project
 In a first time you need to duplicate and rename `.env.example`to `.env` and complete necessary variables.
