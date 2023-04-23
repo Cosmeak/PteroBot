@@ -8,14 +8,7 @@ export default {
 		.setName("servers")
 		.setDescription("Show information about your servers"),
 	async execute(interaction) {
-		const response = await axios.get(`${process.env.PTERO_HOST}/api/client/`, {
-			"headers": {
-				"Accept": "application/json",
-				"Authorization": `Bearer ${process.env.PTERO_TOKEN}`,
-			},
-		});
-
-		console.log(response);
+		const response = await axios.get("/");
 
 		let message = "";
 		response.data.data.forEach((server) => {
