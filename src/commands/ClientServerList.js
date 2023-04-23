@@ -16,14 +16,14 @@ module.exports = {
 
 		let message = "";
 		response.data.data.forEach((server) => {
-			message += server.attributes.name + " [" + server.attributes.identifier + "] \n";
+			message += `**${server.attributes.name}** [${server.attributes.identifier}]\n\n`;
 		});
 
 		const embed = new EmbedBuilder()
-			.setTitle("All available servers")
+			.setTitle("Your servers")
 			.setDescription(message)
 			.setColor("Blurple")
-			.setTitle();
+			.setTimestamp();
 
 		return interaction.reply({ embeds: [embed] });
 	},

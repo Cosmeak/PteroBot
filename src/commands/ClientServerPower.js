@@ -9,7 +9,7 @@ module.exports = {
 		.setDescription("Provide a way to up or down a server")
 		.addStringOption((option) =>
 			option.setName("server-id")
-				.setDescription("Your server external_ID")
+				.setDescription("Your server identifier")
 				.setRequired(true),
 		)
 		.addStringOption((option) =>
