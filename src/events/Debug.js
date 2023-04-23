@@ -1,13 +1,13 @@
-const { Events } = require("discord.js");
-const Logger = require("../services/Logger");
-require("dotenv").config();
+import { Events } from "discord.js";
+import { Logger } from "../services/Logger.js";
+import { config } from "dotenv";
+config();
 
-// When the client is ready, run this code (only once)
-module.exports = {
-	name: Events.Debug,
-	execute(debug) {
-		if (process.env.BOT_MODE === "debug") {
-			Logger.info(debug);
-		}
-	},
+export default {
+  name: Events.Debug,
+  execute(debug) {
+    if (process.env.BOT_MODE === "debug") {
+      Logger.info(debug);
+    }
+  },
 };

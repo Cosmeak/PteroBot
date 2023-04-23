@@ -1,9 +1,9 @@
-const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
-const fecthClientServerInfo = require("../functions/fetchClientServerInfo.js");
-const capitalizeFirstLetter = require("../functions/capitalizeFirstLetter.js");
-const bytesToSize = require("../functions/bytesToSize.js");
+import { SlashCommandBuilder, EmbedBuilder } from "discord.js";
+import fecthClientServerInfo from "../functions/fetchClientServerInfo.js";
+import capitalizeFirstLetter from "../functions/capitalizeFirstLetter.js";
+import bytesToSize from "../functions/bytesToSize.js";
 
-module.exports = {
+export default {
   data: new SlashCommandBuilder()
     .setName("client-server-details")
     .setDescription("Give all know details about the given server")
@@ -14,18 +14,16 @@ module.exports = {
     ),
   async execute(interaction) {
     const server = await fecthClientServerInfo(interaction.options.get("server-id").value);
-    console.log(server);
-
     const embed = new EmbedBuilder()
       .setTitle(server.name)
       .setDescription(server.description ? server.description : "No description...")
       .addFields(
         { name: "Identifier", value: server.identifier, inline: true },
         { name: "Status", value: capitalizeFirstLetter(server.stats.current_state), inline: true },
-        { name: "CPU", value: server.stats.resources.cpu_absolute ? bytesToSize(server.stats.resources.cpu_absolute) : "Offline", inline: true },
+        { name: "CPU", value: server.stats.resources.cpu_absolute ? `${server.stats.resources.cpu_absolute}%` : "Offline", inline: true },
         { name: "Memory", value: server.stats.resources.memory_bytes ? bytesToSize(server.stats.resources.memory_bytes) : "Offline", inline: true },
         { name: "Disk", value: server.stats.resources.disk_bytes ? bytesToSize(server.stats.resources.disk_bytes) : "Offline", inline: true },
-        { name: "Uptime", value: server.stats.resources.uptime ? bytesToSize(server.stats.resources.uptime) : "Offline", inline: true },
+        { name: "Uptime", value: server.stats.resources.uptime ? server.stats.resources.uptime : "Offline", inline: true },
       )
       .setColor("Blurple")
       .setTimestamp();

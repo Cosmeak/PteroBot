@@ -6,7 +6,8 @@
     },
     "parserOptions": {
         "ecmaVersion": 2021,
-        "sourceType": "script"
+        "sourceType": "module",
+        "allowImportExportEverywhere": true
     },
     "rules": {
         "arrow-spacing": [

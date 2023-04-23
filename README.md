@@ -1,1 +1,1 @@
-# PteroBot - A Bot connected to your panel
+# PteroBot - 🪶 A Discord Bot connected to your Pterodactyl API

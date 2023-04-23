@@ -1,10 +1,10 @@
-const { Events } = require("discord.js");
-const Logger = require("../services/Logger");
+import { Events } from "discord.js";
+import { Logger } from "../services/Logger.js";
 
 // When the client is ready, run this code (only once)
-module.exports = {
-	name: Events.Warn,
-	execute(warn) {
-		Logger.warn(warn);
-	},
+export default {
+  name: Events.Warn,
+  execute(warn) {
+    Logger.warn(warn);
+  },
 };
