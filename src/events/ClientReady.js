@@ -1,7 +1,5 @@
 import { Events } from "discord.js";
 import { Logger } from "../services/Logger.js";
-import { config } from "dotenv";
-config();
 
 export default {
 	name: Events.ClientReady,
