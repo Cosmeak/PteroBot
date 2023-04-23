@@ -12,6 +12,7 @@ It can currently:
 - [x] `/safemode` 👑 - Stop, Kill and backups servers from lists 
 - [x] `/backups {identifier}` - Show all backups for a server
 - [x] `/create-backup {identifier}` - Create a new backup for a server
+- [x] `/help` - Show information about all available commands
 
 <small>👑: only for admins</small>
 
