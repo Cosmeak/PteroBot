@@ -5,8 +5,8 @@ config();
 
 export default {
   data: new SlashCommandBuilder()
-    .setName("client-server-list")
-    .setDescription("List all servers"),
+    .setName("servers")
+    .setDescription("Show information about your servers"),
   async execute(interaction) {
     const response = await axios.get(`${process.env.PTERO_HOST}/api/client/`, {
       "headers": {
