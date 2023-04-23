@@ -15,9 +15,11 @@ export default {
       },
     });
 
+    console.log(response);
+
     let message = "";
     response.data.data.forEach((server) => {
-      message += `**${server.attributes.name}** [${server.attributes.identifier}]\n\n`;
+      message += `**${server.attributes.name}** [ ${server.attributes.identifier} ]\n\n`;
     });
 
     const embed = new EmbedBuilder()

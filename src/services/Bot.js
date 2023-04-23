@@ -53,7 +53,8 @@ class Bot {
 
     for (const file of eventsFiles) {
       const filePath = path.join(eventsPath, file);
-      const event = await import(filePath);
+      let event = await import(filePath);
+      event = event.default;
       if (event.once) this.client.once(event.name, (...args) => event.execute(...args));
       else this.client.on(event.name, (...args) => event.execute(...args));
     }
