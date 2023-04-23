@@ -3,8 +3,8 @@ import { Logger } from "../services/Logger.js";
 
 // When the client is ready, run this code (only once)
 export default {
-  name: Events.Warn,
-  execute(warn) {
-    Logger.warn(warn);
-  },
+	name: Events.Warn,
+	execute(warn) {
+		Logger.warn(warn);
+	},
 };

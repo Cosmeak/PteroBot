@@ -4,10 +4,10 @@ import { config } from "dotenv";
 config();
 
 export default {
-  name: Events.Debug,
-  execute(debug) {
-    if (process.env.BOT_MODE === "debug") {
-      Logger.info(debug);
-    }
-  },
+	name: Events.Debug,
+	execute(debug) {
+		if (process.env.BOT_MODE === "debug") {
+			Logger.info(debug);
+		}
+	},
 };
