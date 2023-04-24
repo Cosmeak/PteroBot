@@ -13,6 +13,7 @@ It can currently:
 - [x] `/backups {identifier}` - Show all backups for a server
 - [x] `/create-backup {identifier}` - Create a new backup for a server
 - [x] `/help` - Show information about all available commands
+- [ ] `/realtime {identifier}` 👑 - Associate channel command to a server and refresh regularly server informations
 
 <small>👑: only for admins</small>
 
@@ -24,9 +25,15 @@ In a second time:
 # Install dependencies
 $ yarn install
 
+# Run database migration in development
+$ npx prisma migrate dev
+
 # Launch bot in development mode
 # - I used nodemon to automatically relaunch server after file changes
 $ yarn dev 
+
+# Run database migration in production
+$ npx prisma migrate deploy
 
 # Launch bot in production mode
 $ yarn start
