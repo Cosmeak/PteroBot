@@ -9,3 +9,22 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  discordId Int @unique 
+  pteroApiKey String @unique
+  safemode Safemode?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Safemode {
+  id Int @id @default(autoincrement())
+  userId Int @unique
+  user User @relation(fields: [userId], references: [discordId])
+  killList Json
+  stopList Json
+  backupList Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
