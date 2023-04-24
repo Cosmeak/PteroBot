@@ -5,6 +5,6 @@ export default {
 		.setName("safemode")
 		.setDescription("Turn servers into safemode - Kill/Stop and backup servers"),
 	async execute(interaction) {
-
+		
 	},
 };
