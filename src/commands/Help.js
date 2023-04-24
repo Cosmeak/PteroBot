@@ -8,14 +8,14 @@ export default {
 		const embed = new EmbedBuilder()
 			.setTitle("Need some help?")
 			.setDescription(`
-				**PteroBot** give an access to control your server trough this discord commands. \n
+				**PteroBot** give an access to control your server trough discord commands. \n
 				**/servers** : List all your servers \n
 				**/server {identifier}** : Show you informations about your server, like CPU, RAM, DISK utilization or Update \n
 				**/power {identifer} {state}** : Provide you a way to change a server state (start, stop, kill or restart) \n
 				**/backups {identifier}** : Show all your server backups \n
 				**/create-backup {identifier}** : Create a new backup for your (within the limit of available backups) \n
 				\n
-				If you want to support the bot development, please stared the github repository or contribute to it. https://github.com/Cosmeak/PteroBot
+				If you want to support bot development, please stars the github repository or contribute to it. https://github.com/Cosmeak/PteroBot
 			`)
 			.setTimestamp()
 			.setColor("Blurple");
