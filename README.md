@@ -9,11 +9,12 @@ It can currently:
 - [x] `/server {identifier}` - Show informations about a specific server
 - [x] `/power {identifier} {state}` - Provide a way to change server state (start, stop, kill, restart)
 - [x] `/send {identifier} {command}` - Send a command to a server
-- [x] `/safemode` 👑 - Stop, Kill and backups servers from lists 
+- [ ] `/safemode` 👑 - Stop, Kill and backups servers from lists 
 - [x] `/backups {identifier}` - Show all backups for a server
 - [x] `/create-backup {identifier}` - Create a new backup for a server
 - [x] `/help` - Show information about all available commands
 - [ ] `/realtime {identifier}` 👑 - Associate channel command to a server and refresh regularly server informations
+- [ ] `/add-key` - Add your api key to access your server information (only in bot private messages)
 
 <small>👑: only for admins</small>
 
