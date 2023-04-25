@@ -1,4 +1,4 @@
-import { Client, Collection, GatewayIntentBits } from "discord.js";
+import { ActivityType, Client, Collection, GatewayIntentBits } from "discord.js";
 import * as fs from "node:fs";
 import * as path from "node:path";
 import { fileURLToPath } from "url";
@@ -26,6 +26,7 @@ class Bot {
 	async run() {
 		// Log in to Discord with your token
 		await this.client.login(this.token);
+		this.client.user.setActivity("your servers 👀", { type: ActivityType.Watching });
 		// Launch registration of all slash commands
 		await this.registerCommands();
 		// Launch registration of events
