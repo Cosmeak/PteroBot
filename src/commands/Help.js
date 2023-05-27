@@ -1,13 +1,15 @@
-import { EmbedBuilder, SlashCommandBuilder } from "discord.js";
+import { EmbedBuilder, SlashCommandBuilder, PermissionFlagsBits } from "discord.js";
 
 export default {
-	data: new SlashCommandBuilder()
-		.setName("help")
-		.setDescription("Show all available commands"),
-	async execute(interaction) {
-		const embed = new EmbedBuilder()
-			.setTitle("Need some help?")
-			.setDescription(`
+  data: new SlashCommandBuilder()
+    .setName("help")
+    .setDescription("Show all available commands")
+    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
+    .setDMPermission(false),
+  async execute(interaction) {
+    const embed = new EmbedBuilder()
+      .setTitle("Need some help?")
+      .setDescription(`
 				**PteroBot** give an access to control your server trough discord commands. \n
 				**/servers** : List all your servers \n
 				**/server {identifier}** : Show you informations about your server, like CPU, RAM, DISK utilization or Update \n
@@ -17,8 +19,8 @@ export default {
 				\n
 				If you want to support bot development, please stars the github repository or contribute to it. https://github.com/Cosmeak/PteroBot
 			`)
-			.setTimestamp()
-			.setColor("Blurple");
-		return interaction.reply({ embeds: [embed] });
-	},
+      .setTimestamp()
+      .setColor("Blurple");
+    return interaction.reply({ embeds: [embed] });
+  },
 };

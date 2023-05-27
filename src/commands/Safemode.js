@@ -1,33 +1,32 @@
-import { SlashCommandBuilder } from "discord.js";
-import { PrismaClient } from "@prisma/client";
+import { SlashCommandBuilder, PermissionFlagsBits } from "discord.js";
 import postServerPower from "../functions/postServerPower.js";
 import createNewServerBackup from "../functions/createNewServerBackup.js";
 
 export default {
   data: new SlashCommandBuilder()
     .setName("safemode")
-    .setDescription("Turn servers into safemode - Kill/Stop and backup servers"),
+    .setDescription("Turn servers into safemode - Kill/Stop and backup servers")
+    .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
+    .setDMPermission(false),
   async execute(interaction) {
-    const prisma = new PrismaClient();
-    const user = prisma.user.findUnique({
-      where: { discordId: interaction.member.id },
-      include: { safemode: true },
-    });
 
-    if (user.safemode.stopList) {
-      JSON.parse(user.safemode.stopList).forEach(async (server) => {
+    // TODO : import safemode config from config file
+    const safemode = {};
+
+    if (safemode.stopList) {
+      JSON.parse(safemode.stopList).forEach(async (server) => {
         postServerPower(server, "stop");
       });
     }
 
-    if (user.safemode.killList) {
-      JSON.parse(user.safemode.killList).forEach(async (server) => {
+    if (safemode.killList) {
+      JSON.parse(safemode.killList).forEach(async (server) => {
         postServerPower(server, "kill");
       });
     }
 
-    if (user.safemode.backupList) {
-      JSON.parse(user.safemode.backupList).forEach(async (server) => {
+    if (safemode.backupList) {
+      JSON.parse(safemode.backupList).forEach(async (server) => {
         createNewServerBackup(server);
       });
     }

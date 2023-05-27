@@ -6,7 +6,7 @@ config();
 export default {
 	name: Events.Debug,
 	execute(debug) {
-		if (process.env.BOT_MODE === "debug") {
+		if (process.env.BOT_ENV === "debug") {
 			Logger.info(debug);
 		}
 	},
