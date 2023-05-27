@@ -49,4 +49,4 @@ Happy coding everyone and see you on discord. 👋
 
 ## License
 
-This project use the [MIT LICENSE](./LICENSE.md). Be sure to respect it!
+This project use the [MIT LICENSE](./LICENSE). Be sure to respect it!
