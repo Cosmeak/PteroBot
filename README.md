@@ -2,6 +2,7 @@
 This Discord Bot is a mission gived by `MrJuju0319#5801` to connect his Pterodactyl Panel to a Bot.
 
 We decide to use only the Client part of the API to avoid potential big mistake like delete a server.
+This bot can only control server instances but not delete or manage them.
 
 ## Bot Features
 It can currently: 
