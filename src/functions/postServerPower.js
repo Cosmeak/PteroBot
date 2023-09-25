@@ -8,6 +8,6 @@ export default async (id, signal) => {
 	}
 	catch (error) {
 		console.log(error.request.data.errors);
-		throw "An error occured with the request to your API...";
+		throw new Error("An error occured with the request to your API...");
 	}
 };

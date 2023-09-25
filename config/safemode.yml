@@ -1,0 +1,7 @@
+safemode:
+  stop:
+    # List your servers id here
+  kill:
+    # List your servers id here
+  backup:
+    # List your servers id here

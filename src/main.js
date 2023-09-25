@@ -3,8 +3,16 @@ import axios from "axios";
 import { config } from "dotenv";
 config();
 
+if (process.versions.node < 18) {
+  throw new Error("Your node version need to be at least v18");
+}
+
+if (process.env.PTERO_HOST.endsWith("/")) {
+  throw new Error("Please remove the ending / from your Pterodactyl Host in .env file");
+}
+
 // Define base config for axios
-axios.defaults.baseURL = `${process.env.PTERO_HOST}/api/client` ;
+axios.defaults.baseURL = `${process.env.PTERO_HOST}/api/client`;
 axios.defaults.headers.common["Authorization"] = `Bearer ${process.env.PTERO_TOKEN}`;
 axios.defaults.headers.common["Accept"] = "application/json";
 axios.defaults.headers.common["Content-Type"] = "application/json";
